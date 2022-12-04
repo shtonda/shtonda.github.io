@@ -87,9 +87,8 @@ const start = (page) => {
   }
 };
 
-//######                                                                                        HIDE/SHOW OTHER BUTTONS
+//######                                                                                        HIDE/SHOW OTHER BUTTONS FUNCTION
 let switcher = 0;
-
 const hideShowBtns = () => {
   const btnUP = document.getElementById('uptoup');
   const btnUA = document.getElementById('ua');
@@ -97,12 +96,22 @@ const hideShowBtns = () => {
   if (switcher === 0) {
     btnPL.style.display = 'none';
     btnUA.style.display = 'none';
-    btnUA.style.display = 'none';
+    btnUP.style.display = 'none';
     switcher = 1;
   } else {
     btnPL.style.display = 'block';
     btnUA.style.display = 'block';
-    btnUA.style.display = 'block';
+    btnUP.style.display = 'block';
     switcher = 0;
   }
+};
+
+//######                                                                                        SCROLL FUNCTION
+const scrollUP = () => {
+  const header = document.querySelector('header');
+  header.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+    inline: 'start',
+  });
 };
