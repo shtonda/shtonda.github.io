@@ -115,6 +115,8 @@ const start = (page) => {
 let switcherLeft = 0;
 let switcherRight = 0;
 const hideShowBtns = (side) => {
+  const btnHideL = document.getElementById('hideLeft');
+  const btnHideR = document.getElementById('hideRight');
   if (side === 'right') {
     const btnUP = document.getElementById('uptoup');
     const btnUA = document.getElementById('ua');
@@ -123,12 +125,14 @@ const hideShowBtns = (side) => {
       btnPL.style.display = 'none';
       btnUA.style.display = 'none';
       btnUP.style.display = 'none';
+      btnHideR.style.opacity = '0.2';
       switcherRight = 1;
       console.log('open right');
     } else {
       btnPL.style.display = 'block';
       btnUA.style.display = 'block';
       btnUP.style.display = 'block';
+      btnHideR.style.opacity = '1';
       switcherRight = 0;
     }
   } else {
@@ -139,11 +143,13 @@ const hideShowBtns = (side) => {
       btnPudra.style.display = 'none';
       btnGel.style.display = 'none';
       btnMain.style.display = 'none';
+      btnHideL.style.opacity = '0.2';
       switcherLeft = 1;
     } else {
       btnGel.style.display = 'flex';
       btnPudra.style.display = 'flex';
       btnMain.style.display = 'flex';
+      btnHideL.style.opacity = '1';
       switcherLeft = 0;
     }
   }
