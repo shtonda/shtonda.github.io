@@ -46,13 +46,33 @@ const dataOfPages = {
       header2: '',
     },
   },
+  ui: {
+    ua: {
+      btnGel: 'Гель',
+      btnPudra: 'Пудра',
+      btnUp: 'До гори',
+      btnMain: 'Головна',
+    },
+    pl: {
+      btnGel: 'żel',
+      btnPudra: 'prozsek',
+      btnUp: 'do góry',
+      btnMain: 'Główna',
+    },
+  },
 };
 
 //######                                                                                        RENDER_PAGE_FUCNTION
-const headerOne = document.getElementsByTagName('h1');
-const phrase = document.getElementsByTagName('p');
 
 const renderPage = (lang, page) => {
+  //content
+  const headerOne = document.getElementsByTagName('h1');
+  const phrase = document.getElementsByTagName('p');
+  //ui
+  const btnUP = document.querySelector('#uptoup');
+  const btnGel = document.querySelector('#gel');
+  const btnPudra = document.querySelector('#pudra');
+  const btnMain = document.querySelector('#main');
   if (page === 'main') {
     headerOne[0].innerText = dataOfPages.mainPage[lang].header1;
     phrase[0].innerText = dataOfPages.mainPage[lang].intro;
@@ -65,6 +85,10 @@ const renderPage = (lang, page) => {
   } else {
     console.log('page doesn`t exist');
   }
+  btnUP.innerText = dataOfPages.ui[lang].btnUp;
+  btnGel.innerText = dataOfPages.ui[lang].btnGel;
+  btnPudra.innerText = dataOfPages.ui[lang].btnPudra;
+  btnMain.innerText = dataOfPages.ui[lang].btnMain;
 };
 
 //######                                                                                        CHANGE_LANG_FUNCTION
@@ -88,21 +112,40 @@ const start = (page) => {
 };
 
 //######                                                                                        HIDE/SHOW OTHER BUTTONS FUNCTION
-let switcher = 0;
-const hideShowBtns = () => {
-  const btnUP = document.getElementById('uptoup');
-  const btnUA = document.getElementById('ua');
-  const btnPL = document.getElementById('pl');
-  if (switcher === 0) {
-    btnPL.style.display = 'none';
-    btnUA.style.display = 'none';
-    btnUP.style.display = 'none';
-    switcher = 1;
+let switcherLeft = 0;
+let switcherRight = 0;
+const hideShowBtns = (side) => {
+  if (side === 'right') {
+    const btnUP = document.getElementById('uptoup');
+    const btnUA = document.getElementById('ua');
+    const btnPL = document.getElementById('pl');
+    if (switcherRight === 0) {
+      btnPL.style.display = 'none';
+      btnUA.style.display = 'none';
+      btnUP.style.display = 'none';
+      switcherRight = 1;
+      console.log('open right');
+    } else {
+      btnPL.style.display = 'block';
+      btnUA.style.display = 'block';
+      btnUP.style.display = 'block';
+      switcherRight = 0;
+    }
   } else {
-    btnPL.style.display = 'block';
-    btnUA.style.display = 'block';
-    btnUP.style.display = 'block';
-    switcher = 0;
+    const btnGel = document.getElementById('gel');
+    const btnPudra = document.getElementById('pudra');
+    const btnMain = document.getElementById('main');
+    if (switcherLeft === 0) {
+      btnPudra.style.display = 'none';
+      btnGel.style.display = 'none';
+      btnMain.style.display = 'none';
+      switcherLeft = 1;
+    } else {
+      btnGel.style.display = 'flex';
+      btnPudra.style.display = 'flex';
+      btnMain.style.display = 'flex';
+      switcherLeft = 0;
+    }
   }
 };
 

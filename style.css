@@ -60,21 +60,42 @@ body {
   position: absolute;
   right: 5px;
   top: 55%;
-  grid-area: btns;
-  width: 65px;
+  width: 75px;
   height: 185px;
 }
 
-.ui-control button {
+.navigation {
+  position: absolute;
+  left: 5px;
+  top: 55%;
+  width: 85px;
+  height: 185px;
+}
+
+.navigation a {
+  text-decoration: none;
+}
+
+.ui-control button,
+a {
   margin-bottom: 15px;
   pointer-events: visible;
-  width: 60px;
+  width: 65px;
   height: 50px;
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 5px;
   background-color: transparent;
   color: #fff;
   font-size: 18px;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui-control a,
+.ui-control .navigation button {
+  width: 80px;
 }
 
 @media (min-width: 600px) {
@@ -99,6 +120,10 @@ body {
   width: 100%;
   grid-area: cntn;
   height: 900px;
+}
+
+.content h1 {
+  text-align: center;
 }
 
 .footer {
