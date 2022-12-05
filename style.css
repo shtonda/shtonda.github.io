@@ -60,7 +60,7 @@ body {
   position: absolute;
   right: 5px;
   top: 55%;
-  width: 75px;
+  width: 85px;
   height: 185px;
 }
 
@@ -80,7 +80,7 @@ body {
 a {
   margin-bottom: 15px;
   pointer-events: visible;
-  width: 65px;
+  min-width: 80px;
   height: 50px;
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 5px;
@@ -91,11 +91,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.ui-control a,
-.ui-control .navigation button {
-  width: 80px;
 }
 
 @media (min-width: 600px) {

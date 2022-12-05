@@ -60,6 +60,18 @@ const dataOfPages = {
       btnMain: 'Główna',
     },
   },
+  title: {
+    ua: {
+      main: 'Магічні нігті - Головна',
+      gelPage: 'Магічні нігті - Про гель',
+      pudraPage: 'Магічні нігті - Про пудру',
+    },
+    pl: {
+      main: 'Magiczne paznokcie - Główna',
+      gelPage: 'Magiczne paznokcie - O żelu',
+      pudraPage: 'Magiczne paznokcie - O proszku',
+    },
+  },
 };
 
 //######                                                                                        RENDER_PAGE_FUCNTION
@@ -76,12 +88,15 @@ const renderPage = (lang, page) => {
   if (page === 'main') {
     headerOne[0].innerText = dataOfPages.mainPage[lang].header1;
     phrase[0].innerText = dataOfPages.mainPage[lang].intro;
+    document.title = dataOfPages.title[lang].main;
   } else if (page === 'what-is-gel') {
     headerOne[0].innerText = dataOfPages.gelPage[lang].header1;
     phrase[0].innerText = dataOfPages.gelPage[lang].intro;
+    document.title = dataOfPages.title[lang].gelPage;
   } else if (page === 'what-is-pudra') {
     headerOne[0].innerText = dataOfPages.pudraPage[lang].header1;
     phrase[0].innerText = dataOfPages.pudraPage[lang].intro;
+    document.title = dataOfPages.title[lang].pudraPage;
   } else {
     console.log('page doesn`t exist');
   }
