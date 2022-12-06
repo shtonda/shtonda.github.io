@@ -179,3 +179,12 @@ const scrollUP = () => {
     inline: 'start',
   });
 };
+
+const goToFooter = () => {
+  const footer = document.querySelector('footer');
+  footer.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+    inline: 'start',
+  });
+};

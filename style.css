@@ -13,13 +13,18 @@ body {
   background-color: #222222;
 }
 
+a {
+  text-decoration: none;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-areas: 'hd hd hd hd hd hd hd hd hd hd hd hd' '. cntn cntn cntn cntn cntn cntn cntn cntn cntn cntn .';
+  grid-template-areas:
+    'hd hd hd hd hd hd hd hd hd hd hd hd'
+    '. cntn cntn cntn cntn cntn cntn cntn cntn cntn cntn .'
+    'ft ft ft ft ft ft ft ft ft ft ft ft';
 }
-
-/* 'ft ft ft ft ft ft ft ft ft ft ft ft' */
 
 .header {
   width: 100%;
@@ -27,29 +32,96 @@ body {
 }
 
 .header img {
+  position: absolute;
   max-width: 100%;
   object-position: 50% 50%;
+  filter: brightness(20%);
+}
+
+.header .ui-control-pc {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .ui-control-pc .rightHalf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .ui-control-pc .rightHalf .navigationPC {
+  margin-right: 20px;
+}
+
+.header .ui-control-pc span {
+  color: #fff;
+  font-size: 20px;
+}
+
+.header .ui-control-pc .nav__link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  width: 90px;
+  height: 40px;
+  margin: 0 10px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.header .ui-control-pc .nav__link:hover {
+  opacity: 1;
 }
 
 .header .buttonsChangeLang {
-  position: absolute;
-  width: 150px;
+  width: 230px;
   height: 40px;
-  right: 5px;
-  top: 10px;
 }
 
 .buttonsChangeLang button {
-  width: 45%;
-  height: 95%;
-  background-color: rgba(255, 255, 255, 0.6);
-  border: 2px solid #000;
+  width: 90px;
+  height: 100%;
+  background: transparent;
+  border: 2px solid #fff;
   border-radius: 5px;
-  color: black;
+  color: #fff;
   font-size: 18px;
+  opacity: 0.7;
+  margin: 0 10px;
 }
 
-.ui-control {
+.buttonsChangeLang button.ua:hover {
+  background: linear-gradient(
+    180deg,
+    rgb(0, 87, 184) 50%,
+    rgb(255, 216, 0) 51%
+  );
+  opacity: 1;
+  color: transparent;
+}
+
+.buttonsChangeLang button.pl:hover {
+  background: linear-gradient(
+    180deg,
+    rgb(233, 232, 231) 50%,
+    rgb(212, 33, 61) 51%
+  );
+  opacity: 1;
+  color: transparent;
+}
+
+.ui-control-mobile {
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -72,12 +144,8 @@ body {
   height: 185px;
 }
 
-.navigation a {
-  text-decoration: none;
-}
-
-.ui-control button,
-a {
+.ui-control-mobile button,
+.ui-control-mobile a {
   margin-bottom: 15px;
   pointer-events: visible;
   min-width: 80px;
@@ -94,20 +162,26 @@ a {
 }
 
 @media (min-width: 600px) {
-  .header .buttonsChangeLang {
-    display: block;
+  .header .ui-control-pc {
+    display: flex;
   }
-  .ui-control {
+  .ui-control-mobile {
     display: none;
+  }
+  .content {
+    margin-top: 600px;
   }
 }
 
 @media (max-width: 600px) {
-  .header .buttonsChangeLang {
+  .header .ui-control-pc {
     display: none;
   }
-  .ui-control {
+  .ui-control-mobile {
     display: block;
+  }
+  .content {
+    margin-top: 300px;
   }
 }
 
@@ -121,7 +195,9 @@ a {
   text-align: center;
 }
 
-.footer {
+#footer {
   width: 100%;
+  height: 100px;
+  background-color: #111111;
   grid-area: ft;
 }
