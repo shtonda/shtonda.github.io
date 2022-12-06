@@ -161,7 +161,7 @@ a {
   align-items: center;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   .header .ui-control-pc {
     display: flex;
   }
@@ -173,7 +173,7 @@ a {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .header .ui-control-pc {
     display: none;
   }
