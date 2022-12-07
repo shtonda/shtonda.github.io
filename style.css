@@ -60,9 +60,9 @@ a {
   margin-right: 20px;
 }
 
-.header .ui-control-pc span {
+.header .ui-control-pc .leftHalf span {
   color: #fff;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .header .ui-control-pc .nav__link {
@@ -73,7 +73,7 @@ a {
   color: #fff;
   border: 2px solid #fff;
   border-radius: 5px;
-  width: 90px;
+  width: 100px;
   height: 40px;
   margin: 0 10px;
   opacity: 0.7;
@@ -99,13 +99,14 @@ a {
   font-size: 18px;
   opacity: 0.7;
   margin: 0 10px;
+  transition: opacity 0.2s ease;
 }
 
 .buttonsChangeLang button.ua:hover {
   background: linear-gradient(
     180deg,
-    rgb(0, 87, 184) 50%,
-    rgb(255, 216, 0) 51%
+    rgba(0, 87, 184, 1) 50%,
+    rgba(255, 216, 0, 1) 51%
   );
   opacity: 1;
   color: transparent;

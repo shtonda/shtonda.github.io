@@ -46,7 +46,7 @@ const dataOfPages = {
       header2: '',
     },
   },
-  ui: {
+  uiMob: {
     ua: {
       btnGel: 'Гель',
       btnPudra: 'Пудра',
@@ -58,6 +58,20 @@ const dataOfPages = {
       btnPudra: 'prozsek',
       btnUp: 'do góry',
       btnMain: 'Główna',
+    },
+  },
+  uiPc: {
+    ua: {
+      navLinkMain: 'Головна',
+      navLinkGel: 'Гель',
+      navLinkPouder: 'Пудра',
+      navLinkContacts: 'Контакти',
+    },
+    pl: {
+      navLinkMain: 'Główna',
+      navLinkGel: 'żel',
+      navLinkPouder: 'Prozsek',
+      navLinkContacts: 'Łączność',
     },
   },
   title: {
@@ -80,11 +94,16 @@ const renderPage = (lang, page) => {
   //content
   const headerOne = document.getElementsByTagName('h1');
   const phrase = document.getElementsByTagName('p');
-  //ui
+  //ui-mob
   const btnUP = document.querySelector('#uptoup');
   const btnGel = document.querySelector('#gel');
   const btnPudra = document.querySelector('#pudra');
   const btnMain = document.querySelector('#main');
+  //ui-pc
+  const navLinkMain = document.querySelector('#navLinkMain');
+  const navLinkGel = document.querySelector('#navLinkGel');
+  const navLinkPouder = document.querySelector('#navLinkPouder');
+  const navLinkContacts = document.querySelector('#navLinkContacts');
   if (page === 'main') {
     headerOne[0].innerText = dataOfPages.mainPage[lang].header1;
     phrase[0].innerText = dataOfPages.mainPage[lang].intro;
@@ -100,10 +119,14 @@ const renderPage = (lang, page) => {
   } else {
     console.log('page doesn`t exist');
   }
-  btnUP.innerText = dataOfPages.ui[lang].btnUp;
-  btnGel.innerText = dataOfPages.ui[lang].btnGel;
-  btnPudra.innerText = dataOfPages.ui[lang].btnPudra;
-  btnMain.innerText = dataOfPages.ui[lang].btnMain;
+  btnUP.innerText = dataOfPages.uiMob[lang].btnUp;
+  btnGel.innerText = dataOfPages.uiMob[lang].btnGel;
+  btnPudra.innerText = dataOfPages.uiMob[lang].btnPudra;
+  btnMain.innerText = dataOfPages.uiMob[lang].btnMain;
+  navLinkMain.innerText = dataOfPages.uiPc[lang].navLinkMain;
+  navLinkGel.innerText = dataOfPages.uiPc[lang].navLinkGel;
+  navLinkPouder.innerText = dataOfPages.uiPc[lang].navLinkPouder;
+  navLinkContacts.innerText = dataOfPages.uiPc[lang].navLinkContacts;
 };
 
 //######                                                                                        CHANGE_LANG_FUNCTION
