@@ -20,10 +20,6 @@ a {
 .wrapper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-areas:
-    'hd hd hd hd hd hd hd hd hd hd hd hd'
-    '. cntn cntn cntn cntn cntn cntn cntn cntn cntn cntn .'
-    'ft ft ft ft ft ft ft ft ft ft ft ft';
 }
 
 .header {

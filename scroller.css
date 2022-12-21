@@ -20,6 +20,12 @@
   .scroller {
     width: 80%;
   }
+  .wrapper {
+    grid-template-areas:
+      'hd hd hd hd hd hd hd hd hd hd hd hd'
+      '. cntn cntn cntn cntn cntn cntn cntn cntn cntn cntn .'
+      'ft ft ft ft ft ft ft ft ft ft ft ft';
+  }
 }
 
 @media (max-width: 1270px) {
@@ -36,7 +42,13 @@
     max-height: 90px;
   }
   .scroller {
-    width: 100%;
+    width: 90%;
+  }
+  .wrapper {
+    grid-template-areas:
+      'hd hd hd hd hd hd hd hd hd hd hd hd'
+      'cntn cntn cntn cntn cntn cntn cntn cntn cntn cntn cntn cntn'
+      'ft ft ft ft ft ft ft ft ft ft ft ft';
   }
 }
 
