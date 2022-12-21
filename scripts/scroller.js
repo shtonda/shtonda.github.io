@@ -1,7 +1,8 @@
 let numberImage = 0;
 
 const preloadImages = (count, path) => {
-  for (let i = 1; i == count; i++) {
+  console.log('preloadImages');
+  for (let i = 1; i <= count; i++) {
     image = new Image();
     image.src = `imgs/${path}/${i}.jpg`;
     console.log(`imgs/${path}/${i}.jpg`);
