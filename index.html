@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scroller.css">
     <title>document</title>
     <script src="scripts/changelang.js"></script>
+    <script src="scripts/scroller.js"></script>
 </head>
 
-<body onload="start('main');">
+<body onload="start('main'); scrollerRender(1, 15, 'items_to_do');">
     <div class="wrapper">
         <header class="header">
             <img src="https://wallpaperforu.com/wp-content/uploads/2021/07/Wallpaper-Anime-Original-Latern-Light-Night-Shop-Sto1.jpg"
@@ -33,10 +35,26 @@
                 </div>
             </div>
         </header>
+
         <div class="content">
             <h1></h1>
             <p></p>
+            <div class="scroller">
+                <div class="scroller-images">
+                    <img class="img-prev" id="img-prev" src="" alt="prev picture">
+                    <img class="img-focus" id="img-focus" src="" alt="this picture">
+                    <img class="img-next" id="img-next" src="" alt="next picture">
+                </div>
+                <div class="scroller-btns">
+                    <button class="scroll-left" id="scroll-left"
+                        onclick="goToImg(-1, 15, 'items_to_do');">&#139</button>
+                    <span id="counter">--/--</span>
+                    <button class="scroll-right" id="scroll-right"
+                        onclick="goToImg(1, 15, 'items_to_do');">&#155</button>
+                </div>
+            </div>
         </div>
+
         <div class="ui-control-mobile">
             <div class="buttons">
                 <button id="uptoup" class="uptoup" onclick="scrollUP()">UP!</button>

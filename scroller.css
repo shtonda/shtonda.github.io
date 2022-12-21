@@ -1,0 +1,120 @@
+/*                     .scroller                                                       */
+/*                               .scroller-images                                      */
+/*                                               .images                               */
+/*                               .btn-container                                        */
+/*                                               .btns-left, .btns-right               */
+
+@media (min-width: 1270px) {
+  .scroller-images .img-prev,
+  .scroller-images .img-next {
+    display: inline;
+  }
+  .scroller-images .img-focus {
+    height: 400px;
+    width: 50%;
+  }
+  .scroller-btns button {
+    width: 200px;
+    max-height: none;
+  }
+}
+
+@media (max-width: 1270px) {
+  .scroller-images .img-prev,
+  .scroller-images .img-next {
+    display: none;
+  }
+  .scroller-images .img-focus {
+    width: 80%;
+    height: 100%;
+  }
+  .scroller-btns button {
+    width: 100px;
+    max-height: 120px;
+  }
+}
+
+.scroller {
+  padding-top: 20px;
+  width: 80%;
+  height: auto;
+  margin: 100px auto 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: grid;
+  grid-template-rows: repeat(1fr, 5);
+  grid-template-areas: 'images' 'images' 'images' 'images' 'scrollesButtons';
+  border-radius: 20px 20px 5px 5px;
+}
+
+.scroller-images {
+  width: 100%;
+  margin-bottom: 50px;
+  grid-area: images;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.scroller-images img {
+  display: inline;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.scroller-images .img-prev {
+  width: 20%;
+  height: 40%;
+  opacity: 0.3;
+  filter: blur(2px);
+  transition: opacity 0.2s linear;
+}
+
+.scroller-images .img-next {
+  width: 20%;
+  height: 40%;
+  opacity: 0.3;
+  filter: blur(2px);
+  transition: opacity 0.2s linear;
+}
+
+.scroller-btns {
+  grid-area: scrollesButtons;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.scroller-btns button {
+  color: #fff;
+  min-height: 100px;
+  background-color: transparent;
+  border: 2px solid #bfbfbf;
+  font-size: 2em;
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.scroller-btns button:disabled {
+  opacity: 0.2;
+}
+.scroller-btns button:disabled:hover {
+  opacity: 0.2;
+}
+
+.scroller-btns button:hover {
+  opacity: 1;
+}
+
+.scroller-btns .scroll-left {
+  border-radius: 5px 30px 10px 5px;
+}
+
+.scroller-btns .scroll-right {
+  border-radius: 30px 5px 5px 10px;
+}
+
+.scroller-btns span {
+  color: #fff;
+  font-size: 2em;
+  align-self: center;
+}
