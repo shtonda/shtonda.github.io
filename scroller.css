@@ -29,8 +29,8 @@
     height: 100%;
   }
   .scroller-btns button {
-    width: 100px;
-    max-height: 120px;
+    width: 70px;
+    max-height: 90px;
   }
 }
 

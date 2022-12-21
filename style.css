@@ -155,30 +155,6 @@ a {
   align-items: center;
 }
 
-/* @media (min-width: 900px) {
-  .ui-control-pc {
-    display: none;
-  }
-  .ui-control-mobile {
-    display: block;
-  }
-  .content {
-    margin-top: 600px;
-  }
-}
-
-@media (max-width: 900px) {
-  .ui-control-pc {
-    display: none;
-  }
-  .ui-control-mobile {
-    display: block;
-  }
-  .content {
-    margin-top: 300px;
-  }
-} */
-
 .content {
   padding-top: 50px;
   width: 100%;
