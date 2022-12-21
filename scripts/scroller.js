@@ -1,5 +1,26 @@
 let numberImage = 0;
 
+document.addEventListener('DOMContentLoaded', () => {
+  const images = new Array();
+
+  function preloadImages(...images) {
+    images.forEach((image, i) => {
+      image = new Image();
+      image.src = preloadImages.arguments[i];
+    });
+  }
+
+  // Предварительная загрузка нужных картинок
+  preloadImages();
+});
+
+const preloadImages = (count, path) => {
+  for (let i = 1; i == count; i++) {
+    image = new Image();
+    image.src = `imgs/${path}/${i}.jpg`;
+  }
+};
+
 const scrollerRender = (numImg, countImgs, path) => {
   prevImage = document.getElementById('img-prev');
   focusImage = document.getElementById('img-focus');

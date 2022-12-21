@@ -100,10 +100,6 @@ const renderPage = (lang, page) => {
   const btnPudra = document.querySelector('#pudra');
   const btnMain = document.querySelector('#main');
   //ui-pc
-  const navLinkMain = document.querySelector('#navLinkMain');
-  const navLinkGel = document.querySelector('#navLinkGel');
-  const navLinkPouder = document.querySelector('#navLinkPouder');
-  const navLinkContacts = document.querySelector('#navLinkContacts');
   if (page === 'main') {
     headerOne[0].innerText = dataOfPages.mainPage[lang].header1;
     phrase[0].innerText = dataOfPages.mainPage[lang].intro;
@@ -123,10 +119,6 @@ const renderPage = (lang, page) => {
   btnGel.innerText = dataOfPages.uiMob[lang].btnGel;
   btnPudra.innerText = dataOfPages.uiMob[lang].btnPudra;
   btnMain.innerText = dataOfPages.uiMob[lang].btnMain;
-  navLinkMain.innerText = dataOfPages.uiPc[lang].navLinkMain;
-  navLinkGel.innerText = dataOfPages.uiPc[lang].navLinkGel;
-  navLinkPouder.innerText = dataOfPages.uiPc[lang].navLinkPouder;
-  navLinkContacts.innerText = dataOfPages.uiPc[lang].navLinkContacts;
 };
 
 //######                                                                                        CHANGE_LANG_FUNCTION

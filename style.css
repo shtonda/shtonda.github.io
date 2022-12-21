@@ -32,16 +32,13 @@ a {
 }
 
 .header img {
-  position: absolute;
+  position: relative;
   max-width: 100%;
   object-position: 50% 50%;
   filter: brightness(20%);
 }
 
-.header .ui-control-pc {
-  position: relative;
-  top: 0;
-  left: 0;
+.ui-control-pc {
   width: 100%;
   height: 80px;
   padding: 0 20px;
@@ -50,22 +47,17 @@ a {
   justify-content: space-between;
 }
 
-.header .ui-control-pc .rightHalf {
+.ui-control-pc .buttons-navigate {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.header .ui-control-pc .rightHalf .navigationPC {
+.ui-control-pc .rightHalf .navigationPC {
   margin-right: 20px;
 }
 
-.header .ui-control-pc .leftHalf span {
-  color: #fff;
-  font-size: 25px;
-}
-
-.header .ui-control-pc .nav__link {
+.ui-control-pc .nav__link {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -80,11 +72,11 @@ a {
   transition: opacity 0.2s ease;
 }
 
-.header .ui-control-pc .nav__link:hover {
+.ui-control-pc .nav__link:hover {
   opacity: 1;
 }
 
-.header .buttonsChangeLang {
+.buttonsChangeLang {
   width: 230px;
   height: 40px;
 }
@@ -123,6 +115,7 @@ a {
 }
 
 .ui-control-mobile {
+  display: block;
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -162,12 +155,12 @@ a {
   align-items: center;
 }
 
-@media (min-width: 900px) {
-  .header .ui-control-pc {
-    display: flex;
+/* @media (min-width: 900px) {
+  .ui-control-pc {
+    display: none;
   }
   .ui-control-mobile {
-    display: none;
+    display: block;
   }
   .content {
     margin-top: 600px;
@@ -175,7 +168,7 @@ a {
 }
 
 @media (max-width: 900px) {
-  .header .ui-control-pc {
+  .ui-control-pc {
     display: none;
   }
   .ui-control-mobile {
@@ -184,9 +177,10 @@ a {
   .content {
     margin-top: 300px;
   }
-}
+} */
 
 .content {
+  padding-top: 50px;
   width: 100%;
   grid-area: cntn;
   height: 900px;
